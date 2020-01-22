@@ -36,9 +36,29 @@ for word in words:
 
 print(len(word_set))
 
-# def get_neighbors(word):
+def get_neighbors(word):
+    '''
+    return al words from word list that are 1 letter different
 
-
+    change one letter to another letter in the alphabet incrementally
+    seatch the graph for that
+    then repeat for each letter in the word
+    '''
+    neighbors = []
+    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','s','t','u','v','w','x','y','z']
+    #for each letter in the word,
+    for i in range(len(word)):
+    #   for each letter in the alphabet
+        for letter in alphabet:
+            #change the word letter to the alphabet letter
+            list_word = list(word)
+            list_word[i] = letter
+            w = "".join(list_word)
+            if w != word and w in word_set:
+                neighbors.append(w)
+            #if the new word is in the word set
+                  #add it to neighbors
+    return neighbors
 
 
 
